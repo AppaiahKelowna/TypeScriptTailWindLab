@@ -23,7 +23,7 @@ export default function Expenses() {
       </div>
       <div className="h-[100%] bg-gray-800 h-20 w-[20%] rounded-md">
         <section className="flex justify-between items-center p-5">
-          <label className="text-gray-500 text-sm">Input</label>
+          <label className="text-gray-500 text-sm">Output</label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -43,7 +43,7 @@ export default function Expenses() {
       </div>
       <div className="h-[100%] bg-green-900 h-20 w-[20%] rounded-md">
         <section className="flex justify-between items-center p-5">
-          <label className="text-gray-500 text-sm">Input</label>
+          <label className="text-gray-500 text-sm">Total</label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
