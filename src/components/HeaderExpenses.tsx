@@ -1,8 +1,8 @@
 export default function Expenses() {
   return (
     <section className="flex justify-center gap-2">
-      <div className="h-[100%] bg-gray-800 h-20 w-[20%] rounded-md">
-        <section className="flex justify-between items-center p-5">
+      <div className="bg-gray-800 w-[20%] rounded-md p-4 flex flex-col gap-2">
+        <section className="flex justify-between">
           <label className="text-gray-500 text-sm">Input</label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,10 +19,10 @@ export default function Expenses() {
             />
           </svg>
         </section>
-        <label className="text-white text-2xl font-bold pl-5">$ 1,000</label>
+        <label className="text-white text-2xl font-bold">$ 1,000</label>
       </div>
-      <div className="h-[100%] bg-gray-800 h-20 w-[20%] rounded-md">
-        <section className="flex justify-between items-center p-5">
+      <div className="bg-gray-800 w-[20%] rounded-md flex flex-col gap-2 p-4">
+        <section className="flex justify-between items-center">
           <label className="text-gray-500 text-sm">Output</label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +39,10 @@ export default function Expenses() {
             />
           </svg>
         </section>
-        <label className="text-white text-2xl font-bold pl-5">$ 1,000</label>
+        <label className="text-white text-2xl font-bold">$ 1,000</label>
       </div>
-      <div className="h-[100%] bg-green-900 h-20 w-[20%] rounded-md">
-        <section className="flex justify-between items-center p-5">
+      <div className="bg-green-900 w-[20%] rounded-md flex flex-col gap-2 p-4">
+        <section className="flex justify-between items-center">
           <label className="text-gray-500 text-sm">Total</label>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default function Expenses() {
             />
           </svg>
         </section>
-        <label className="text-white text-2xl font-bold pl-5">$ 1,000</label>
+        <label className="text-white text-2xl font-bold">$ 1,000</label>
       </div>
     </section>
   );

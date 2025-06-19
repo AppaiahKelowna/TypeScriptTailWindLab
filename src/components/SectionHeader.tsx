@@ -1,5 +1,5 @@
 import dtIcon from "../assets/DTMoneyIcon.png";
-import Expenses from "./BodyExpenses";
+import Expenses from "./HeaderExpenses";
 
 export default function Header() {
   return (
