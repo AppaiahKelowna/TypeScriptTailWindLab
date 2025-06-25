@@ -1,4 +1,4 @@
-export default function BodySearchButton() {
+export default function SearchButton() {
   return (
     <button className=" h-[40%] w-[13%] border border-green-500 flex items-center justify-around rounded-md">
       <svg

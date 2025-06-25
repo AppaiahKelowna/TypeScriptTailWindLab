@@ -1,15 +1,15 @@
 import "./App.css";
 import "./index.css";
-import Header from "./components/SectionHeader";
-import Body from "./components/SectionBody";
-import FooterSection from "./components/SectionFooter";
+import Header from "./Sections/Header";
+import Body from "./Sections/Body";
+import Footer from "./Sections/Footer";
 
 function App() {
   return (
     <>
       <Header />
       <Body />
-      <FooterSection />
+      <Footer />
     </>
   );
 }

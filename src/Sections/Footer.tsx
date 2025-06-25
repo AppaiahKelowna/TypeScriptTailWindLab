@@ -1,4 +1,4 @@
-export default function FooterSection() {
+export default function Footer() {
   return (
     <section className="h-[10vh] w-full bg-gray-900 flex justify-center items-center gap-2">
       <button>
