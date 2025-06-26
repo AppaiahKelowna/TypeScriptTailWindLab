@@ -3,23 +3,14 @@ import type { ExpenseProps } from "../utils/mock";
 
 type InputExpensesProps = {
   expenses: ExpenseProps[];
+  handleInputChange: (newInputValue: string) => void;
 };
 
-export default function Input({ expenses = [] }: InputExpensesProps) {
-  const [value, setValue] = useState("");
-
+export default function Input({handleInputChange,  expenses = []}: InputExpensesProps) {
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+    handleInputChange(e.target.value);
   };
 
-  const filterExpense = expenses.filter((expend) => {
-    return (
-      expend.title.toLowerCase().includes(value.toLowerCase()) ||
-      expend.category.toLowerCase().includes(value.toLowerCase()) ||
-      expend.date.toLowerCase().includes(value.toLowerCase())
-    );
-  });
-  console.log(filterExpense);
   return (
     <input
       placeholder="Search for a Transaction"
