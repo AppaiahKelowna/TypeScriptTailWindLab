@@ -1,18 +1,11 @@
-import { useState, type ChangeEvent, type HtmlHTMLAttributes } from "react";
-
-type expense = {
-  title: string;
-  expense: number;
-  category: "food" | "fun" | "needs" | "work";
-  type: "input" | "output";
-  date: string;
-};
+import { useState, type ChangeEvent } from "react";
+import type { ExpenseProps } from "../utils/mock";
 
 type InputExpensesProps = {
-  expenses: expense[];
+  expenses: ExpenseProps[];
 };
 
-export default function BodyInput({ expenses = [] }: InputExpensesProps) {
+export default function Input({ expenses = [] }: InputExpensesProps) {
   const [value, setValue] = useState("");
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {

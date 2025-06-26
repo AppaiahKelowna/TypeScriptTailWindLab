@@ -1,6 +1,9 @@
 import SearchButton from "../components/SearchButton";
-import BodyInput from "../components/BodyInput";
+import Input from "../components/Input";
 import Data from "../utils/mock";
+import { useEffect, useMemo, useState } from "react";
+
+// const [expenditureData, setExpenditureData] = useState(Data);
 
 type expenseListProp = {
   title: string;
@@ -8,16 +11,6 @@ type expenseListProp = {
   category: String;
   date: String;
 };
-
-const expenseListing = Data.map((expenditure) => {
-  const bodyData = {
-    title: expenditure.title,
-    expense: expenditure.expense,
-    category: expenditure.category,
-    date: expenditure.date,
-  };
-  return bodyData;
-});
 
 function NewBody({ title, expense, category, date }: expenseListProp) {
   return (
@@ -31,14 +24,27 @@ function NewBody({ title, expense, category, date }: expenseListProp) {
     </tbody>
   );
 }
+
 export default function Body() {
+  const expenseListing = useMemo(() => {
+    return Data.map((expenditure) => {
+      const bodyData = {
+        title: expenditure.title,
+        expense: expenditure.expense,
+        category: expenditure.category,
+        date: expenditure.date,
+      };
+      return bodyData;
+    });
+  }, [Data]);
+
   const table = expenseListing.map((expense) => {
     return NewBody(expense);
   });
   return (
     <section className="bg-gray-900 h-[90vh] w-full pt-20 flex flex-col items-center">
       <div className="flex gap-2 justify-center items-center h-[20vh] w-[55%]">
-        <BodyInput expenses={Data} />
+        <Input expenses={Data} />
         <SearchButton />
       </div>
       <section className="flex flex-col text-white gap-2 rounded-md w-[55%] items-start">

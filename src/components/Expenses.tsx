@@ -1,7 +1,12 @@
 import Data from "../utils/mock";
 import imagesMock from "../utils/imagesMock";
+import type { JSX } from "react";
 
-type ExpensesProps = { type: string; amount: number; image: number };
+type ExpensesProps = {
+  type: string;
+  amount: number;
+  image: { id: number; img: JSX.Element };
+};
 
 const accumalateInputExpense = Data.filter((expense) => {
   return expense.type == "input" ? expense.expense : 0;
@@ -19,27 +24,26 @@ const expenseAccumalated = [
   {
     type: "Input",
     amount: accumalateInputExpense,
-    image: 0,
+    image: imagesMock.filter((expense) => expense.id == 0)[0],
   },
   {
     type: "Output",
     amount: accumalateOutputExpense,
-    image: 2,
+    image: imagesMock.filter((expense) => expense.id == 2)[0],
   },
   {
     type: "Total",
     amount: accumalateInputExpense + accumalateOutputExpense,
-    image: 1,
+    image: imagesMock.filter((expense) => expense.id == 1)[0],
   },
 ];
 
 function ExpenseCalculator({ type, amount, image }: ExpensesProps) {
-  const expenseImg = imagesMock.filter((expense) => expense.id == image);
   return (
     <div className="bg-gray-800 w-[20%] rounded-md p-4 flex flex-col gap-2">
       <section className="flex justify-between">
         <label className="text-gray-500 text-sm">{type}</label>
-        {expenseImg[0].img}
+        {image.img}
       </section>
       <label className="text-white text-2xl font-bold">${amount}</label>
     </div>
